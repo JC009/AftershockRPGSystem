@@ -3,11 +3,13 @@ package com.example.aftershockrpgsystem.calculator.ui.fragments
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.example.aftershockrpgsystem.R
+import kotlinx.android.synthetic.main.fragment_handgun.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,23 +19,34 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [rifle.OnFragmentInteractionListener] interface
+ * [Handgun.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [rifle.newInstance] factory method to
+ * Use the [Handgun.newInstance] factory method to
  * create an instance of this fragment.
  */
-class rifle : Fragment() {
+class Handgun : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+    private lateinit var button: Button
+
+    private var stats = listOf<CharSequence>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+            param2 = it.getString(ARG_PARAM2) }
+
+        /*
+        stats = listOf(textView_shortPrc.text,textView_mediumPrc.text, textView_longPrc.text,
+            textView_shortAp.text, textView_mediumAp.text, textView_longAp.text,
+            textView_shortDmg.text, textView_mediumDmg.text, textView_longDmg.text)
+
+         */
+
     }
 
     override fun onCreateView(
@@ -41,7 +54,7 @@ class rifle : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rifle, container, false)
+        return inflater.inflate(R.layout.fragment_handgun, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -84,12 +97,12 @@ class rifle : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment rifle.
+         * @return A new instance of fragment handgun.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            rifle().apply {
+            Handgun().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

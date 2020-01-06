@@ -8,8 +8,10 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import com.example.aftershockrpgsystem.R
 import com.example.aftershockrpgsystem.calculator.ui.main.SectionsPagerAdapter
+import kotlinx.android.synthetic.main.fragment_handgun.*
 
 class CalculatorActivity : AppCompatActivity() {
 

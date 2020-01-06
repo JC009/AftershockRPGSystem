@@ -17,12 +17,12 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [shotgun.OnFragmentInteractionListener] interface
+ * [Shotgun.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [shotgun.newInstance] factory method to
+ * Use the [Shotgun.newInstance] factory method to
  * create an instance of this fragment.
  */
-class shotgun : Fragment() {
+class Shotgun : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -89,7 +89,7 @@ class shotgun : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            shotgun().apply {
+            Shotgun().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
