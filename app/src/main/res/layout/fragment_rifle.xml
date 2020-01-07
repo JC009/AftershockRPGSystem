@@ -3,12 +3,272 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".calculator.ui.fragments.Rifle">
+    tools:context=".calculator.ui.fragments.RifleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="rifle" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/mm556_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5.56x45 mm" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/grendel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6.5 mm Grendel" />
+
+                <Button
+                    android:id="@+id/winmag_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=".300 Win Mag" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/mm762_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7.62x51 mm" />
+
+                <Button
+                    android:id="@+id/lapmag_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=".338 Lapua Mag" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/blackout_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=".300 Blackout" />
+
+                <Button
+                    android:id="@+id/bmg_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=".50 BMG" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/textViewTarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="5"
+                    android:gravity="center"
+                    android:text="@string/target_range"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/button_short"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_span="2"
+                    android:text="Short" />
+
+                <Button
+                    android:id="@+id/button_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Medium" />
+
+                <Button
+                    android:id="@+id/button_long"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_span="2"
+                    android:text="Long" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@string/prc" />
+
+                <TextView
+                    android:id="@+id/textView_shortPrc"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/prcshort"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView_mediumPrc"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/prcmedium"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView_precision"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/prclong"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/prc" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@string/ap" />
+
+                <TextView
+                    android:id="@+id/textView_shortAp"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/apshort"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView_mediumAp"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/apmedium"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView_armorPenetration"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/aplong"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/ap" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@string/dmg" />
+
+                <TextView
+                    android:id="@+id/textView_shortDmg"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dmgshort"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView_mediumDmg"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dmgmedium"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView_damage"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dmglong"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/dmg" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

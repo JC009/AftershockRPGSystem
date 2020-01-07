@@ -18,9 +18,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CalculatorActivity::class.java)
             startActivity(intent)
         }
-
-
     }
-
-
 }

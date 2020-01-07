@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.aftershockrpgsystem.R
-import com.example.aftershockrpgsystem.calculator.ui.fragments.Handgun
-import com.example.aftershockrpgsystem.calculator.ui.fragments.Rifle
-import com.example.aftershockrpgsystem.calculator.ui.fragments.Shotgun
-import com.example.aftershockrpgsystem.calculator.ui.fragments.Test
+import com.example.aftershockrpgsystem.calculator.ui.fragments.*
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,
@@ -28,12 +25,10 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         // Return a PlaceholderFragment (defined as a static inner class below).
 
         return when (position){
-            0 -> Handgun.newInstance("hg1","hg2")
-            //1 -> Rifle.newInstance("rf1","rf2")
-            //2 -> Shotgun.newInstance("sg1","sg2")
-            1 -> Test()
-            2 -> PlaceholderFragment()
-            else -> Handgun.newInstance("else1", "else2")
+            0 -> HandgunFragment.newInstance()
+            1 -> RifleFragment.newInstance()
+            2 -> ShotgunFragment.newInstance()
+            else -> HandgunFragment.newInstance()
         }
     }
 

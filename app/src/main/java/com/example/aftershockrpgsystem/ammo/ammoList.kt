@@ -16,8 +16,7 @@ class ammoList {
         private val dmgMedium = 3
         private val dmgLong = 2
 
-        val stats = listOf(
-            prcShort, prcMedium, prcLong, apShort, apMedium, apLong, dmgShort, dmgMedium, dmgLong )
+        val stats = listOf( prcShort, prcMedium, prcLong, apShort, apMedium, apLong, dmgShort, dmgMedium, dmgLong )
     }
 
     class ACP45()
@@ -34,8 +33,7 @@ class ammoList {
         private val dmgMedium = 4
         private val dmgLong = 2
 
-        val stats = listOf(
-            prcShort, prcMedium, prcLong, apShort, apMedium, apLong, dmgShort, dmgMedium, dmgLong )
+        val stats = listOf( prcShort, prcMedium, prcLong, apShort, apMedium, apLong, dmgShort, dmgMedium, dmgLong )
     }
 
     class MM10()

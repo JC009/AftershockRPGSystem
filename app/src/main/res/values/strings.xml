@@ -8,4 +8,22 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="target_range">Target Range</string>
+    <string name="dmg">DMG</string>
+    <string name="dmgshort">DmgShort</string>
+    <string name="dmgmedium">DmgMedium</string>
+    <string name="dmglong">DmgLong</string>
+    <string name="ap">AP</string>
+    <string name="apshort">ApShort</string>
+    <string name="apmedium">ApMedium</string>
+    <string name="aplong">ApLong</string>
+    <string name="prc">PRC</string>
+    <string name="prcshort">PrcShort</string>
+    <string name="prcmedium">PrcMedium</string>
+    <string name="prclong">PrcLong</string>
+    <string name="ammunition">Ammunition</string>
+    <string name="target_armor">Target Armor</string>
+    <string name="ammunition_statistics">Ammunition Statistics</string>
+    <string name="precision">Precision</string>
+    <string name="armor_penetration">Armor Penetration</string>
+    <string name="damage">Damage</string>
 </resources>
