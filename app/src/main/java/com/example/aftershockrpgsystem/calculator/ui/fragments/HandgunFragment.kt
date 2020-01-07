@@ -11,6 +11,7 @@ import android.widget.*
 import com.example.aftershockrpgsystem.R
 import com.example.aftershockrpgsystem.ammo.ammoList
 import kotlinx.android.synthetic.main.fragment_handgun.*
+import kotlin.math.round
 
 class HandgunFragment : Fragment() {
 
@@ -23,6 +24,10 @@ class HandgunFragment : Fragment() {
     private lateinit var stats: List<TextView>
     private lateinit var buttons: List<Button>
     private lateinit var ammo: List<List<Int>>
+    private var enemyArmor = 0
+    private var numberOfShots = 0
+    private var hittingOn = 0
+    private var damage = 0
 
     private var currentAmmo = 0
 
@@ -60,6 +65,8 @@ class HandgunFragment : Fragment() {
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                 // Display the current progress of SeekBar
                 textView_enemyArmor.text = "Enemy Armor: $i"
+                enemyArmor = i
+                chanceToHit()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -73,6 +80,8 @@ class HandgunFragment : Fragment() {
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                 // Display the current progress of SeekBar
                 textView_shotsFired.text = "Shots on Target: $i"
+                numberOfShots = i
+                averageDamage()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -111,9 +120,9 @@ class HandgunFragment : Fragment() {
             onAmmoSelect(6)
         }
 
-        radioButton_short.setOnCheckedChangeListener { buttonView, isChecked -> onAmmoSelect(currentAmmo) }
-        radioButton_medium.setOnCheckedChangeListener { buttonView, isChecked -> onAmmoSelect(currentAmmo) }
-        radioButton_long.setOnCheckedChangeListener { buttonView, isChecked -> onAmmoSelect(currentAmmo) }
+        radioButton_short.setOnCheckedChangeListener { buttonView, isChecked -> onAmmoSelect(currentAmmo); chanceToHit() }
+        radioButton_medium.setOnCheckedChangeListener { buttonView, isChecked -> onAmmoSelect(currentAmmo); chanceToHit() }
+        radioButton_long.setOnCheckedChangeListener { buttonView, isChecked -> onAmmoSelect(currentAmmo); chanceToHit() }
     }
 
     private fun onAmmoSelect (position: Int)
@@ -123,20 +132,99 @@ class HandgunFragment : Fragment() {
             textView_precision.text = ammo[position][0].toString()
             textView_armorPenetration.text = ammo[position][3].toString()
             textView_damage.text = ammo[position][6].toString()
+            damage = ammo[position][6]
         }
         if (radioButton_medium.isChecked)
         {
             textView_precision.text = ammo[position][1].toString()
             textView_armorPenetration.text = ammo[position][4].toString()
             textView_damage.text = ammo[position][7].toString()
+            damage = ammo[position][7]
         }
         if (radioButton_long.isChecked)
         {
             textView_precision.text = ammo[position][2].toString()
             textView_armorPenetration.text = ammo[position][5].toString()
             textView_damage.text = ammo[position][8].toString()
+            damage = ammo[position][8]
         }
 
         currentAmmo = position
+
+        chanceToHit()
+        averageDamage()
+    }
+
+    private fun chanceToHit ()
+    {
+        val armorPen: Int
+        val result: Int
+
+        when {
+            radioButton_short.isChecked -> {
+                armorPen = ammo[currentAmmo][3]
+                result = enemyArmor - armorPen
+                when {
+                    result <= 1 -> {
+                        textView_hittingOn.text = "All"
+                    }
+                    result > 6 -> {
+                        textView_hittingOn.text = "None"
+                    }
+                    else -> {
+                        textView_hittingOn.text = result.toString()
+                        hittingOn = result
+                    }
+                }
+            }
+            radioButton_medium.isChecked -> {
+                armorPen = ammo[currentAmmo][4]
+                result = enemyArmor - armorPen
+                when {
+                    result <= 1 -> {
+                        textView_hittingOn.text = "All"
+                    }
+                    result > 6 -> {
+                        textView_hittingOn.text = "None"
+                    }
+                    else -> {
+                        textView_hittingOn.text = result.toString()
+                        hittingOn = result
+                    }
+                }
+            }
+            radioButton_long.isChecked -> {
+                armorPen = ammo[currentAmmo][5]
+                result = enemyArmor - armorPen
+                when {
+                    result <= 1 -> {
+                        textView_hittingOn.text = "All"
+                    }
+                    result > 6 -> {
+                        textView_hittingOn.text = "None"
+                    }
+                    else -> {
+                        textView_hittingOn.text = result.toString()
+                        hittingOn = result
+                    }
+                }
+            }
+        }
+    }
+
+    private fun averageDamage ()
+    {
+        when (textView_hittingOn.text) {
+            "None" -> {
+                textView_averageDamage.text = "0"
+            }
+            "All" -> {
+                textView_averageDamage.text = (damage * numberOfShots).toString()
+            }
+            else -> {
+                val sum: Double = (damage.toDouble() * numberOfShots.toDouble()) / hittingOn.toDouble()
+                textView_averageDamage.text = (sum).toString()
+            }
+        }
     }
 }

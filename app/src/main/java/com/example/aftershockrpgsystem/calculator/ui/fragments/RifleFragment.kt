@@ -30,9 +30,6 @@ class RifleFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(RifleViewModel::class.java)
         // TODO: Use the ViewModel
 
-        val text =  textViewTarget?.text
-
-        println("MARKER: $text")
     }
 
 }
