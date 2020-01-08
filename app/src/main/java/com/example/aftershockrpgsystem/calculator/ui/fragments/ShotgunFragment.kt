@@ -11,7 +11,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 
 import com.example.aftershockrpgsystem.R
-import com.example.aftershockrpgsystem.ammo.ammoList
+import com.example.aftershockrpgsystem.things.ammoList
 import kotlinx.android.synthetic.main.fragment_shotgun.*
 
 class ShotgunFragment : Fragment() {

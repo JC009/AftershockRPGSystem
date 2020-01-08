@@ -1,4 +1,4 @@
-package com.example.aftershockrpgsystem.ammo
+package com.example.aftershockrpgsystem.things
 
 class ammoList {
 

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.*
 
 import com.example.aftershockrpgsystem.R
-import com.example.aftershockrpgsystem.ammo.ammoList
+import com.example.aftershockrpgsystem.things.ammoList
 import kotlinx.android.synthetic.main.fragment_handgun.*
 import kotlin.math.round
 
