@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".dice_simulator.DiceActivity"
+            android:label="@string/title_activity_dice"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".calculator.CalculatorActivity"
             android:label="@string/title_activity_calculator"
             android:parentActivityName=".MainActivity"

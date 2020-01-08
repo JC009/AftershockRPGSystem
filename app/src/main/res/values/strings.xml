@@ -26,4 +26,6 @@
     <string name="precision">Precision</string>
     <string name="armor_penetration">Armor Penetration</string>
     <string name="damage">Damage</string>
+    <string name="pellets">Pellets</string>
+    <string name="title_activity_dice">DiceActivity</string>
 </resources>

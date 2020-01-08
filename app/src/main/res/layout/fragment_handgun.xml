@@ -13,14 +13,15 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_margin="8dp"
             android:orientation="vertical">
+
 
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:stretchColumns="*">
 
                 <TableRow
@@ -28,8 +29,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="8dp">
 
-
                     <TextView
+                        android:id="@+id/textView_ammunitionStatistics"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_span="2"
@@ -41,7 +42,7 @@
                 <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -105,13 +106,6 @@
 
                 </TableRow>
 
-            </TableLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:stretchColumns="*">
-
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -131,12 +125,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="0"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/textView8"
@@ -144,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Average Damage:"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/textView_averageDamage"
@@ -152,7 +146,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="0"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
                 </TableRow>
 
             </TableLayout>
@@ -160,21 +154,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp">
+                android:layout_marginBottom="16dp"
+                android:gravity="bottom"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textViewTarget"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="3"
                     android:layout_gravity="center"
+                    android:layout_span="3"
                     android:text="@string/target_range"
                     android:textSize="20sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <RadioGroup
@@ -212,11 +207,10 @@
                     android:id="@+id/textView_enemyArmor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
                     android:layout_marginTop="8dp"
                     android:layout_span="3"
                     android:text="Enemy Armor: 0"
+                    android:textAlignment="center"
                     android:textSize="20sp" />
 
                 <SeekBar
@@ -230,18 +224,17 @@
                     android:id="@+id/textView_shotsFired"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
                     android:layout_marginTop="8dp"
                     android:layout_span="3"
                     android:text="Shots on Target: 1"
+                    android:textAlignment="center"
                     android:textSize="20sp" />
 
                 <SeekBar
                     android:id="@+id/seekBarShots"
                     android:layout_width="match_parent"
                     android:layout_height="24dp"
-                    android:max="20"
+                    android:max="8"
                     android:min="1" />
 
             </LinearLayout>

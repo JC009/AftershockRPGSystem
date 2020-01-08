@@ -25,9 +25,10 @@ class HandgunFragment : Fragment() {
     private lateinit var buttons: List<Button>
     private lateinit var ammo: List<List<Int>>
     private var enemyArmor = 0
-    private var numberOfShots = 0
+    private var numberOfShots = 1
     private var hittingOn = 0
     private var damage = 0
+    private val dice = 6
 
     private var currentAmmo = 0
 
@@ -57,9 +58,8 @@ class HandgunFragment : Fragment() {
             buttons[x].setBackgroundResource(android.R.drawable.btn_default)
         }
 
-        for (x in stats.indices){
-            stats[x].text = "0"
-        }
+        onAmmoSelect(0)
+        textView_ammunitionStatistics.text = "9mm Parabellum Statistics"
 
         seekBarArmor.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
@@ -67,6 +67,7 @@ class HandgunFragment : Fragment() {
                 textView_enemyArmor.text = "Enemy Armor: $i"
                 enemyArmor = i
                 chanceToHit()
+                averageDamage()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -94,30 +95,37 @@ class HandgunFragment : Fragment() {
 
         mm9_button.setOnClickListener {
             onAmmoSelect(0)
+            textView_ammunitionStatistics.text = "9mm Parabellum Statistics"
         }
 
         acp45_button.setOnClickListener {
             onAmmoSelect(1)
+            textView_ammunitionStatistics.text = ".45 ACP Statistics"
         }
 
         mm10_button.setOnClickListener {
             onAmmoSelect(2)
+            textView_ammunitionStatistics.text = "10mm AUTO Statistics"
         }
 
         ae50_button.setOnClickListener {
             onAmmoSelect(3)
+            textView_ammunitionStatistics.text = ".50 Action Express Statistics"
         }
 
         mag357_button.setOnClickListener {
             onAmmoSelect(4)
+            textView_ammunitionStatistics.text = ".357 Magnum Statistics"
         }
 
         mag44_button.setOnClickListener {
             onAmmoSelect(5)
+            textView_ammunitionStatistics.text = ".44 Magnum Statistics"
         }
 
         mag500_button.setOnClickListener {
             onAmmoSelect(6)
+            textView_ammunitionStatistics.text = ".500 S&W Magnum Statistics"
         }
 
         radioButton_short.setOnCheckedChangeListener { buttonView, isChecked -> onAmmoSelect(currentAmmo); chanceToHit() }
@@ -222,9 +230,15 @@ class HandgunFragment : Fragment() {
                 textView_averageDamage.text = (damage * numberOfShots).toString()
             }
             else -> {
-                val sum: Double = (damage.toDouble() * numberOfShots.toDouble()) / hittingOn.toDouble()
-                textView_averageDamage.text = (sum).toString()
+                val sum: Double = (damage.toDouble() * numberOfShots.toDouble()) * (dice + 1 - hittingOn.toDouble()) / dice
+                textView_averageDamage.text = (sum.round(1)).toString()
             }
         }
+    }
+
+    private fun Double.round(decimals: Int): Double {
+        var multiplier = 1.0
+        repeat(decimals) { multiplier *= 10 }
+        return round(this * multiplier) / multiplier
     }
 }

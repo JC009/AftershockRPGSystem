@@ -6,47 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button_calculator"
-        android:layout_width="215dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
-        android:layout_marginTop="436dp"
-        android:text="Damage Calculator"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
 
-    <Button
-        android:id="@+id/button_character"
-        android:layout_width="215dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="304dp"
-        android:text="Character"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/button_rules"
+            android:layout_width="match_parent"
+            android:background="@drawable/rules_background"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:text="Rules" />
 
-    <Button
-        android:id="@+id/button_items"
-        android:layout_width="215dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
-        android:layout_marginTop="172dp"
-        android:text="Items"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/just_a_line" />
 
-    <Button
-        android:id="@+id/button_rules"
-        android:layout_width="215dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="60dp"
-        android:text="Rules"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/button_items"
+            android:layout_width="match_parent"
+            android:background="@drawable/items_background"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:text="Items" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/just_a_line" />
+
+        <Button
+            android:id="@+id/button_character"
+            android:layout_width="match_parent"
+            android:background="@drawable/character_background"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:text="Character" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/just_a_line" />
+
+        <Button
+            android:id="@+id/button_calculator"
+            android:layout_width="match_parent"
+            android:background="@drawable/calculator_background"
+            android:layout_height="70dp"
+            android:text="Damage Calculator"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/just_a_line" />
+
+        <Button
+            android:id="@+id/button_roller"
+            android:layout_width="match_parent"
+            android:background="@drawable/roller_background"
+            android:layout_height="70dp"
+            android:text="Dice Simulator"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
