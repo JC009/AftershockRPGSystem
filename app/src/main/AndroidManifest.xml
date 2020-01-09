@@ -13,9 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".rules.RulesActivity"
+            android:label="@string/title_activity_rules"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aftershockrpgsystem.MainActivity" />
+        </activity>
+        <activity
             android:name=".dice_simulator.DiceActivity"
             android:label="@string/title_activity_dice"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".calculator.CalculatorActivity"
             android:label="@string/title_activity_calculator"

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Character Creation">
+        <menu>
+            <item
+                android:id="@+id/nav_primaryStatistics"
+                android:title="Primary Statistics" />
+
+            <item
+                android:id="@+id/nav_TODO"
+                android:title="Secondary Statistics" />
+        </menu>
+    </item>
+
+    <item android:title="Basic Rules">
+        <menu>
+            <item
+                android:id="@+id/nav_gallery"
+                android:title="How to Play" />
+
+            <item
+                android:id="@+id/nav_TODO2"
+                android:title="Skill Checks" />
+
+            <item
+                android:id="@+id/nav_slideshow"
+                android:title="Combat" />
+
+            <item
+                android:id="@+id/nav_TODO3"
+                android:title="Off-time" />
+        </menu>
+    </item>
+
+    <item android:title="Items">
+        <menu>
+
+            <item
+                android:id="@+id/nav_tools"
+                android:title="Weapons" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:title="Armor" />
+
+            <item
+                android:id="@+id/nav_send"
+                android:title="Miscellaneous" />
+        </menu>
+    </item>
+
+</menu>
