@@ -1,4 +1,4 @@
-package com.example.aftershockrpgsystem.rules.ui.tools
+package com.example.aftershockrpgsystem.items.ui.tools
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.aftershockrpgsystem.calculator.CalculatorActivity
 import com.example.aftershockrpgsystem.dice_simulator.DiceActivity
-import com.example.aftershockrpgsystem.rules.ItemsActivity
+import com.example.aftershockrpgsystem.items.ItemsActivity
+import com.example.aftershockrpgsystem.rules.RulesActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         button_roller.setOnClickListener {
             val intent = Intent(this, DiceActivity::class.java)
+            startActivity(intent)
+        }
+
+        button_rules.setOnClickListener {
+            val intent = Intent(this, RulesActivity::class.java)
             startActivity(intent)
         }
     }

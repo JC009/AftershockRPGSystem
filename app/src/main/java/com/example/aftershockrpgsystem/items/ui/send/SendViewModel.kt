@@ -1,4 +1,4 @@
-package com.example.aftershockrpgsystem.rules.ui.send
+package com.example.aftershockrpgsystem.items.ui.send
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

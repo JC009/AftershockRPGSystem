@@ -13,7 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".rules.ItemsActivity"
+            android:name=".rules.RulesActivity"
+            android:label="@string/title_activity_rules"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aftershockrpgsystem.MainActivity" />
+        </activity>
+        <activity
+            android:name=".items.ItemsActivity"
             android:label="@string/title_activity_rules"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

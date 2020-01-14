@@ -1,4 +1,4 @@
-package com.example.aftershockrpgsystem.rules
+package com.example.aftershockrpgsystem.items
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -21,7 +21,7 @@ class ItemsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rules)
+        setContentView(R.layout.activity_items)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 

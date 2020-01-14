@@ -1,13 +1,13 @@
-package com.example.aftershockrpgsystem.rules.ui.home
+package com.example.aftershockrpgsystem.items.ui.share
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class ShareViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is share Fragment"
     }
     val text: LiveData<String> = _text
 }
