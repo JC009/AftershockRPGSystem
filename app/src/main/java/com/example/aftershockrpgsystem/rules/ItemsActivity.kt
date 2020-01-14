@@ -15,7 +15,7 @@ import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import com.example.aftershockrpgsystem.R
 
-class RulesActivity : AppCompatActivity() {
+class ItemsActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
